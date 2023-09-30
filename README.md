@@ -58,8 +58,8 @@ from dagster import Definitions
 import os
 ```
 - Create your first asset
-  ```
-  @asset
+```
+@asset
 def league_standing():
     urls = [
     {"url": "https://www.skysports.com/ligue-1-table", "source": "Ligue 1"},
