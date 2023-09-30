@@ -1,0 +1,12 @@
+dagster
+dbt-duckdb
+dash
+duckdb
+bs4
+pandas
+requests
+dagster-webserver
+lxml
+dagit
+dagster-duckdb 
+dagster-duckdb-pandas
