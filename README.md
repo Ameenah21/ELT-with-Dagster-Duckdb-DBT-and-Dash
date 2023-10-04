@@ -7,9 +7,13 @@ Steps for the Project
 python -m venv venv
 ```
 - Activate the environment
-  ```
-python -m venv venv
 ```
+python -m venv venv #For MacOS and Linux users
+
+venv\Scripts\activate #For Windows Command Prompt
+
+.\venv\Scripts\Activate.ps1 #For Windows Power Shell
+
 source venv/bin/activate
 ```
 - Install Dagster
@@ -18,7 +22,7 @@ pip install dagster
 ```
 - Create Dagster Project
  ```
-dagster project scaffold --name my-dagster-project
+dagster project scaffold --name my-dagster-project (or any name you want for your project
 
 ```
 - Edit the setup.py
@@ -47,7 +51,11 @@ dagster project scaffold --name my-dagster-project
       extras_require={"dev": ["dagster-webserver", "pytest"]},
   )
   ```
-- Import asset dependencies in asset.py
+_ Install dependencies in setup.py
+```
+pip install -e ".[dev]"
+```
+- Import asset dependencies into asset.py
 ```
 import requests
 from bs4 import BeautifulSoup
@@ -104,12 +112,11 @@ def league_standing():
 
     # Concatenate all DataFrames into a single DataFrame
     football_standing = pd.concat(dfs, ignore_index=True)
-    football_standing.to_csv("footballstanding.csv")```
-- Install your requirements
+    football_standing.to_csv("footballstanding.csv")
 ```
-pip install -e ".[dev]"
-```
+
 - start your server
 ```
 dagster dev -f hello-dagster.py
 ```
+- Check your dagster server at http://127.0.0.1:3000/ [[Link Text](http://127.0.0.1:3000/)]([URL](http://127.0.0.1:3000/))and materialize your assets. If the materialization is successful, you should see a file in your folder named football_standing.csv
