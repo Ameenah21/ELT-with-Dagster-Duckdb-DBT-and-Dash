@@ -1,4 +1,4 @@
-# ETL-with-Dagster-Duckdb-DBT-and-Dash
+# ELT-with-Dagster-Duckdb-DBT-and-Dash
 Steps for the Project
 - Create a Project File
 - Cd into the directory
