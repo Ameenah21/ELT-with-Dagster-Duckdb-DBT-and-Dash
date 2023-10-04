@@ -8,13 +8,13 @@ python -m venv venv
 ```
 - Activate the environment
 ```
-#For MacOS and Linux users
+For MacOS and Linux users
 source venv/bin/activate
 
-#For Windows Command Prompt
+For Windows Command Prompt
 venv\Scripts\activate 
 
-#For Windows Power Shell
+For Windows Power Shell
 .\venv\Scripts\Activate.ps1 
 
 
