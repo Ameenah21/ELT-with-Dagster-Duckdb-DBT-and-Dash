@@ -1,0 +1,7 @@
+[32m2023-10-04 07:58:01 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a72c6829-cbc3-4095-9300-e94625a4d100 - 36101 - LOGS_CAPTURED - Started capturing logs in process (pid: 36101).
+[32m2023-10-04 07:58:01 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a72c6829-cbc3-4095-9300-e94625a4d100 - 36101 - league_standing - STEP_START - Started execution of step "league_standing".
+[32m2023-10-04 07:58:01 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a72c6829-cbc3-4095-9300-e94625a4d100 - 36101 - league_standing - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2023-10-04 07:58:01 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a72c6829-cbc3-4095-9300-e94625a4d100 - league_standing - Writing file at: /Users/apple/Desktop/Dagster 3/ELT-with-Dagster-Duckdb-DBT-and-Dash/sportsdata/tmpmtk5n7d5/storage/league_standing using PickledObjectFilesystemIOManager...
+[32m2023-10-04 07:58:01 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a72c6829-cbc3-4095-9300-e94625a4d100 - 36101 - league_standing - ASSET_MATERIALIZATION - Materialized value league_standing.
+[32m2023-10-04 07:58:01 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a72c6829-cbc3-4095-9300-e94625a4d100 - 36101 - league_standing - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2023-10-04 07:58:01 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a72c6829-cbc3-4095-9300-e94625a4d100 - 36101 - league_standing - STEP_SUCCESS - Finished execution of step "league_standing" in 902ms.
