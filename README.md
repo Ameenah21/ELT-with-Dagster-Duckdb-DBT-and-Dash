@@ -119,4 +119,4 @@ def league_standing():
 ```
 dagster dev -f hello-dagster.py
 ```
-- Check your dagster server at http://127.0.0.1:3000/ [[Link Text](http://127.0.0.1:3000/)]([URL](http://127.0.0.1:3000/))and materialize your assets. If the materialization is successful, you should see a file in your folder named football_standing.csv
+- Check your dagster server at http://127.0.0.1:3000/ and materialize your assets. If the materialization is successful, you should see a file in your folder named football_standing.csv
