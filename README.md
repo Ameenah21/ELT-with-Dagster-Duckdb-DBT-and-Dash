@@ -8,13 +8,16 @@ python -m venv venv
 ```
 - Activate the environment
 ```
-python -m venv venv #For MacOS and Linux users
-
-venv\Scripts\activate #For Windows Command Prompt
-
-.\venv\Scripts\Activate.ps1 #For Windows Power Shell
-
+For MacOS and Linux users
 source venv/bin/activate
+
+For Windows Command Prompt
+venv\Scripts\activate 
+
+For Windows Power Shell
+.\venv\Scripts\Activate.ps1 
+
+
 ```
 - Install Dagster
 ```
@@ -51,7 +54,7 @@ dagster project scaffold --name my-dagster-project (or any name you want for you
       extras_require={"dev": ["dagster-webserver", "pytest"]},
   )
   ```
-_ Install dependencies in setup.py
+- Install dependencies in setup.py
 ```
 pip install -e ".[dev]"
 ```
