@@ -51,7 +51,7 @@ dagster project scaffold --name my-dagster-project (or any name you want for you
       extras_require={"dev": ["dagster-webserver", "pytest"]},
   )
   ```
-_ Install dependencies in setup.py
+- Install dependencies in setup.py
 ```
 pip install -e ".[dev]"
 ```
