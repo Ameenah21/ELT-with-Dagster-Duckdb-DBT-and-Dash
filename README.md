@@ -226,4 +226,6 @@ for table_name in table_names:
 ``` 
 dbt init project_name
 ```
+- Run dbt debug
+- Create and edit your project
 
