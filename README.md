@@ -123,3 +123,101 @@ def league_standing():
 dagster dev -f hello-dagster.py
 ```
 - Check your dagster server at http://127.0.0.1:3000/ and materialize your assets. If the materialization is successful, you should see a file in your folder named football_standing.csv
+
+- Create the second task to define the second asset to extract the scores
+```
+@asset
+def get_scores():
+    url = "https://www.skysports.com/football-results"
+    r = requests.get(url)
+    soup = BeautifulSoup(r.text, "lxml")
+
+    home_team = soup.find_all("span", class_="matches__item-col matches__participant matches__participant--side1")
+    x = [name.strip() for i in home_team for name in i.stripped_strings]
+
+    scores = soup.find_all("span", class_="matches__teamscores")
+    s = [name.strip().replace('\n\n', '\n') for i in scores for name in i.stripped_strings]
+    appended_scores = [f"{s[i]}\n{s[i+1]}".replace('\n', ' ') for i in range(0, len(s), 2)]
+
+    away_team = soup.find_all("span", class_="matches__item-col matches__participant matches__participant--side2")
+    y = [name.strip() for i in away_team for name in i.stripped_strings]
+
+    # Make sure all arrays have the same length
+    min_length = min(len(x), len(appended_scores), len(y))
+    data = {"Home Team": x[:min_length], "Scores": appended_scores[:min_length], "Away Team": y[:min_length]}
+    footballscores = pd.DataFrame(data)
+    footballscores.to_csv("footscores.csv")
+```
+# Week 2 Working with DuckDB
+We are going to create a DuckDB database, create a connecttion to it and load our data in two tables, namely scores_standing and scores table.
+There are two ways of interacting with the duckdb and dagster;DuckDB resource and DuckDB I/O manager. We will be using the resource beacuse we want to interact with our tables using SQL, I/O is more suited for libraries like Pandas, Spark and Polars
+- Create a dagster dafinition
+current_directory = os.getcwd()
+database_file = os.path.join(current_directory, "my_duckdb_database.duckdb")
+```
+defs = Definitions(
+    assets=[league_standing, get_scores, create_scores_table],
+    resources={
+        "duckdb": DuckDBResource(
+            database=database_file)}
+)
+
+- Create a duckdb database and our first table
+
+```
+@asset
+def create_scores_table(duckdb: DuckDBResource) -> None:
+    sports_df = pd.read_csv(
+        "footscores.csv",
+        names=['Unnamed: 0', 
+               'Home Team', 
+               'Scores', 
+               'Away Team'],
+            
+    )
+
+    with duckdb.get_connection() as conn:
+        conn.execute("CREATE TABLE sports.scores AS SELECT * FROM scores_df")
+```
+- Check if table has been created in database successsfully
+Create a testdb.py to check if there are tables in the database
+```import duckdb
+with duckdb.connect("my_duckdb_database.duckdb") as conn:
+    # Specify the table name you want to check
+    table_name = "scores"
+    
+    # Query to check if the table exists
+    result = conn.execute(f"SELECT 1 FROM {table_name} LIMIT 1")
+    
+    # Check if the query returned any rows
+    table_exists = len(result.fetchall()) > 0
+    
+    if table_exists:
+        print(f"The table '{table_name}' exists.")
+    else:
+        print(f"The table '{table_name}' does not exist.")
+```
+- Create the second table
+```
+@asset
+def create_standings_table(duckdb: DuckDBResource) -> None:
+    standings_df = pd.read_csv("standing.csv")
+
+    with duckdb.get_connection() as conn:
+        conn.execute("CREATE TABLE IF NOT EXISTS standings AS SELECT * FROM standings_df")
+```
+- check your if the two tables exist in you db
+```
+# Execute the SQL query to list tables
+result = conn.execute("SELECT name FROM sqlite_master WHERE type='table'")
+
+# Fetch and print the table names
+table_names = result.fetchall()
+for table_name in table_names:
+    print(table_name[0])
+```
+- Initialize your dbt project
+``` 
+dbt init project_name
+```
+
