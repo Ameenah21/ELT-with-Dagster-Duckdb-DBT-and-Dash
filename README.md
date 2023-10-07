@@ -151,7 +151,8 @@ def get_scores():
 # Week 2 Working with DuckDB
 We are going to create a DuckDB database, create a connecttion to it and load our data in two tables, namely scores_standing and scores table.
 There are two ways of interacting with the duckdb and dagster;DuckDB resource and DuckDB I/O manager. We will be using the resource beacuse we want to interact with our tables using SQL, I/O is more suited for libraries like Pandas, Spark and Polars
-- Create a dagster dafinition
+- Create a dagster definition
+  
 current_directory = os.getcwd()
 database_file = os.path.join(current_directory, "my_duckdb_database.duckdb")
 ```
@@ -161,7 +162,7 @@ defs = Definitions(
         "duckdb": DuckDBResource(
             database=database_file)}
 )
-
+```
 - Create a duckdb database and our first table
 
 ```
@@ -179,9 +180,14 @@ def create_scores_table(duckdb: DuckDBResource) -> None:
     with duckdb.get_connection() as conn:
         conn.execute("CREATE TABLE sports.scores AS SELECT * FROM scores_df")
 ```
+- Start dagster server and materialize new assets.
+  ```
+  dagster dev
+  ```
 - Check if table has been created in database successsfully
 Create a testdb.py to check if there are tables in the database
-```import duckdb
+```
+import duckdb
 with duckdb.connect("my_duckdb_database.duckdb") as conn:
     # Specify the table name you want to check
     table_name = "scores"
