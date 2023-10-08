@@ -6,12 +6,12 @@
 4,5,Paris Saint-Germain,7,3,3,1,14,6,8,12,,Ligue 1
 5,6,Rennes,7,2,5,0,13,7,6,11,,Ligue 1
 6,7,Lille,7,3,2,2,10,9,1,11,,Ligue 1
-7,8,Strasbourg,7,3,1,3,7,9,-2,10,,Ligue 1
-8,9,Montpellier,7,2,3,2,12,9,3,9,,Ligue 1
-9,10,Le Havre,7,2,3,2,10,9,1,9,,Ligue 1
-10,11,Toulouse,7,2,3,2,9,8,1,9,,Ligue 1
-11,12,Marseille,7,2,3,2,9,11,-2,9,,Ligue 1
-12,13,Nantes,7,2,2,3,12,14,-2,8,,Ligue 1
+7,8,Nantes,8,3,2,3,14,15,-1,11,,Ligue 1
+8,9,Strasbourg,8,3,1,4,8,11,-3,10,,Ligue 1
+9,10,Montpellier,7,2,3,2,12,9,3,9,,Ligue 1
+10,11,Le Havre,7,2,3,2,10,9,1,9,,Ligue 1
+11,12,Toulouse,7,2,3,2,9,8,1,9,,Ligue 1
+12,13,Marseille,7,2,3,2,9,11,-2,9,,Ligue 1
 13,14,Metz,7,2,2,3,7,13,-6,8,,Ligue 1
 14,15,RC Lens,7,2,1,4,7,12,-5,7,,Ligue 1
 15,16,Lorient,7,1,3,3,10,15,-5,6,,Ligue 1
@@ -40,9 +40,9 @@
 38,1,Real Madrid,8,7,0,1,16,6,10,21,,la liga
 39,2,Barcelona,8,6,2,0,19,8,11,20,,la liga
 40,3,Girona,8,6,1,1,18,11,7,19,,la liga
-41,4,Atletico Madrid,7,5,1,1,18,7,11,16,,la liga
-42,5,Real Sociedad,8,4,3,1,16,10,6,15,,la liga
-43,6,Athletic Bilbao,8,4,2,2,13,9,4,14,,la liga
+41,4,Athletic Bilbao,9,5,2,2,16,9,7,17,,la liga
+42,5,Atletico Madrid,7,5,1,1,18,7,11,16,,la liga
+43,6,Real Sociedad,8,4,3,1,16,10,6,15,,la liga
 44,7,Real Betis,8,3,3,2,10,12,-2,12,,la liga
 45,8,Rayo Vallecano,8,3,3,2,9,11,-2,12,,la liga
 46,9,Valencia,8,3,1,4,9,10,-1,10,,la liga
@@ -56,7 +56,7 @@
 54,17,Alaves,8,2,1,5,6,12,-6,7,,la liga
 55,18,Celta Vigo,8,1,2,5,8,13,-5,5,,la liga
 56,19,Granada,8,1,2,5,13,21,-8,5,,la liga
-57,20,Almeria,8,0,3,5,11,21,-10,3,,la liga
+57,20,Almeria,9,0,3,6,11,24,-13,3,,la liga
 58,1,Bayer Leverkusen,6,5,1,0,20,6,14,16,,Bundesliga
 59,2,Stuttgart,6,5,0,1,19,7,12,15,,Bundesliga
 60,3,Bayern Munich,6,4,2,0,20,6,14,14,,Bundesliga
@@ -68,32 +68,32 @@
 66,9,Eintracht Frankfurt,6,1,4,1,4,5,-1,7,,Bundesliga
 67,10,1. FC Heidenheim 1846,6,2,1,3,10,13,-3,7,,Bundesliga
 68,11,1. FC Union Berlin,6,2,0,4,9,10,-1,6,,Bundesliga
-69,12,Werder Bremen,6,2,0,4,10,14,-4,6,,Bundesliga
-70,13,M'gladbach,6,1,2,3,11,14,-3,5,,Bundesliga
+69,12,M'gladbach,7,1,3,3,13,16,-3,6,,Bundesliga
+70,13,Werder Bremen,6,2,0,4,10,14,-4,6,,Bundesliga
 71,14,FC Augsburg,6,1,2,3,9,15,-6,5,,Bundesliga
 72,15,SV Darmstadt 98,6,1,1,4,10,18,-8,4,,Bundesliga
 73,16,Bochum,6,0,3,3,5,19,-14,3,,Bundesliga
-74,17,Cologne,6,0,1,5,4,11,-7,1,,Bundesliga
-75,18,Mainz,6,0,1,5,4,17,-13,1,,Bundesliga
+74,17,Mainz,7,0,2,5,6,19,-13,2,,Bundesliga
+75,18,Cologne,6,0,1,5,4,11,-7,1,,Bundesliga
 76,1,Inter Milan,7,6,0,1,19,3,16,18,,Seria A
 77,2,AC Milan,7,6,0,1,15,8,7,18,,Seria A
 78,3,Napoli,7,4,2,1,16,6,10,14,,Seria A
 79,4,Juventus,7,4,2,1,12,6,6,14,,Seria A
 80,5,Fiorentina,7,4,2,1,15,10,5,14,,Seria A
 81,6,Atalanta,7,4,1,2,11,5,6,13,,Seria A
-82,7,Lecce,7,3,2,2,8,9,-1,11,,Seria A
+82,7,Lecce,8,3,3,2,9,10,-1,12,,Seria A
 83,8,Bologna,7,2,4,1,6,4,2,10,,Seria A
-84,9,Frosinone,7,2,3,2,9,10,-1,9,,Seria A
-85,10,Torino,7,2,3,2,6,7,-1,9,,Seria A
-86,11,Sassuolo,7,3,0,4,11,13,-2,9,,Seria A
+84,9,Sassuolo,8,3,1,4,12,14,-2,10,,Seria A
+85,10,Frosinone,7,2,3,2,9,10,-1,9,,Seria A
+86,11,Torino,7,2,3,2,6,7,-1,9,,Seria A
 87,12,Monza,7,2,3,2,5,7,-2,9,,Seria A
 88,13,Roma,7,2,2,3,15,11,4,8,,Seria A
 89,14,Genoa,7,2,2,3,10,11,-1,8,,Seria A
 90,15,Verona,7,2,2,3,4,6,-2,8,,Seria A
 91,16,Lazio,7,2,1,4,7,10,-3,7,,Seria A
-92,17,Udinese,7,0,4,3,4,12,-8,4,,Seria A
-93,18,Salernitana,7,0,3,4,4,14,-10,3,,Seria A
-94,19,Empoli,7,1,0,6,1,16,-15,3,,Seria A
+92,17,Udinese,8,0,5,3,4,12,-8,5,,Seria A
+93,18,Empoli,8,1,1,6,1,16,-15,4,,Seria A
+94,19,Salernitana,7,0,3,4,4,14,-10,3,,Seria A
 95,20,Cagliari,7,0,2,5,2,12,-10,2,,Seria A
 96,1,PSV Eindhoven,7,7,0,0,23,2,21,21,,Eredivisie
 97,2,AZ Alkmaar,7,6,1,0,20,3,17,19,,Eredivisie
@@ -110,9 +110,9 @@
 108,13,Vitesse Arnhem,7,2,0,5,6,11,-5,6,,Eredivisie
 109,14,Heerenveen,7,2,0,5,9,17,-8,6,,Eredivisie
 110,15,Ajax,5,1,2,2,7,10,-3,5,,Eredivisie
-111,16,Almere City FC,7,1,1,5,6,18,-12,4,,Eredivisie
-112,17,FC Utrecht,7,1,0,6,4,16,-12,3,,Eredivisie
-113,18,FC Volendam,6,0,1,5,6,16,-10,1,,Eredivisie
+111,16,FC Volendam,7,1,1,5,7,16,-9,4,,Eredivisie
+112,17,Almere City FC,7,1,1,5,6,18,-12,4,,Eredivisie
+113,18,FC Utrecht,8,1,0,7,4,17,-13,3,,Eredivisie
 114,1,Celtic,7,6,1,0,16,4,12,19,,Scottish premiership
 115,2,St Mirren,7,4,3,0,11,7,4,15,,Scottish premiership
 116,3,Rangers,7,4,0,3,10,5,5,12,,Scottish premiership
