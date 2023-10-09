@@ -184,6 +184,31 @@ def create_scores_table(duckdb: DuckDBResource) -> None:
   ```
   dagster dev
   ```
+- If the above fails
+Edit the __init__.py filr in the same folder as your assets.py. Note there are two __init__.py files,
+```
+from dagster import Definitions, load_assets_from_modules
+from dagster_duckdb import DuckDBResource
+from dagster import Definitions
+import os
+
+current_directory = os.getcwd()
+database_file = os.path.join(current_directory, "my_duckdb_database.duckdb")
+
+
+from . import assets
+
+all_assets = load_assets_from_modules([assets])
+
+defs = Definitions(
+    assets=all_assets,
+    resources={
+        "duckdb": DuckDBResource(
+            database=database_file,
+        )
+    },
+)
+```
 - Check if table has been created in database successsfully
 Create a testdb.py to check if there are tables in the database
 ```
