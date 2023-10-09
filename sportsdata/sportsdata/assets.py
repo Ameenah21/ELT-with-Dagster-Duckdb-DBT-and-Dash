@@ -97,7 +97,21 @@ def create_scores_table(duckdb: DuckDBResource) -> None:
 
 @asset
 def create_standings_table(duckdb: DuckDBResource) -> None:
-    standings_df = pd.read_csv("footballstanding.csv")
+    standings_df = pd.read_csv("footballstanding.csv",
+                               names=['Unnamed: 0',
+                                        'Team',
+                                        'Pl',
+                                        'W',
+                                        'D',
+                                        'L',
+                                        'F',
+                                        'A',
+                                        'GD',
+                                        'Pts',
+                                        'Last 6',
+                                        'Source'],
+                                        
+                    )
 
     with duckdb.get_connection() as conn:
         conn.execute("CREATE TABLE IF NOT EXISTS standings AS SELECT * FROM standings_df")

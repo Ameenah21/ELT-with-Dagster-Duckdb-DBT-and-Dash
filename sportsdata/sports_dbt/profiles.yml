@@ -1,0 +1,8 @@
+sports_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "ELT-with-Dagster-Duckdb-DBT-and-Dash/sportsdata/my_duckdb_database.duckdb"
+
+
