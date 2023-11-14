@@ -1,5 +1,6 @@
 # ELT-with-Dagster-Duckdb-DBT-and-Dash
 This project is a weekend class I am teaching on Data engineering.
+
 Steps for the Project
 - Create a Project File
 - Cd into the directory
